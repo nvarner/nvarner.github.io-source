@@ -1,2 +1,3 @@
-User-Agent: *
+User-agent: *
 Disallow:
+Sitemap: http://nathanvarner.com/sitemap.xml
