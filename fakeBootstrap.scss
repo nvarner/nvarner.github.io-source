@@ -34,16 +34,17 @@
 .container {
   @include flex;
   @include flex-direction(column);
+  @include flex-wrap(wrap);
   min-height: 100%;
 
   .row {
     @include flex;
     @include flex-direction(row);
-    //@include flex-wrap(wrap);
+    @include flex-wrap(wrap);
 
     .col {
       @include flex-grow(1);
-      @include flex-basis(50%);
+      @include flex-basis(48%);
     }
   }
 }
