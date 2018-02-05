@@ -1,0 +1,139 @@
+@import "colors";
+@import "fakeBootstrap";
+
+@font-face {
+  font-family: "GlacialIndifferenceRegular";
+  src: url("GlacialIndifferenceRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "KaushanScriptRegular";
+  src: url("KaushanScriptRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SansusWebissimoRegular";
+  src: url("SansusWebissimoRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HKGroteskRegular";
+  src: url("HKGroteskRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -o-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+@mixin transition($property, $duration, $function, $delay) {
+  -webkit-transition: $property $duration $function $delay;
+  -moz-transition: $property $duration $function $delay;
+  -o-transition: $property $duration $function $delay;
+  transition: $property $duration $function $delay;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-family: inherit, "GlacialIndifferenceRegular", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.25em;
+}
+
+h3 {
+  font-size: 1.755em;
+}
+
+h4 {
+  font-size: 1.68em;
+}
+
+h5 {
+  font-size: 1.245em;
+}
+
+h6 {
+  font-size: 1.125em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header {
+  background-color: $secondary-highlight;
+  color: $secondary-shadow;
+  font-family: "SansusWebissimoRegular", sans-serif;
+  display: inline-block;
+
+  #above-bar {
+    color: $secondary-highlight;
+    background-color: $secondary-shadow;
+    padding: 4px;
+    
+    padding-left: 15px;
+  }
+
+  h1 {
+    padding: 15px;
+  }
+}
+.content {
+  color: $dark;
+  background-color: $light;
+  padding: 15px;
+}
+footer {
+  background-color: $secondary-shadow;
+  align-self: flex-end;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+
+  hr {
+    border-color: $primary-shadow;
+  }
+}
+body, html {
+  height: 100%;
+}
+
+a {
+  color: $primary-neutral;
+}
+a:active, a:hover {
+  color: $primary;
+}
+
+dl {
+  dt {
+    font-weight: bold;
+    font-size: 1.245em;
+  }
+  dd {
+    margin-bottom: 15px;
+  }
+}
+
+.box {
+  background-color: $light-highlight;
+  padding: 15px;
+  margin: 7.5px;
+}
