@@ -1,0 +1,106 @@
+/*
+* Flexbox
+* Containers, rows, and columns
+*/
+@mixin flex {
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+@mixin flex-direction ($direction) {
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction:     $direction;
+  flex-direction:         $direction;
+}
+
+@mixin flex-grow ($size) {
+  -webkit-flex-grow: $size;
+  flex-grow: $size;
+}
+
+@mixin flex-basis ($basis) {
+  -webkit-flex-basis: $basis;
+  flex-basis: $basis;
+}
+
+@mixin flex-wrap ($wrap) {
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+.container {
+	@include flex;
+	@include flex-direction(column);
+	@include flex-wrap(wrap);
+	min-height: 100%;
+	
+	.row {
+	  @include flex;
+	  @include flex-direction(row);
+	  .col {
+	    @include flex-grow(1);
+	  }
+	}
+	
+	@media only screen and (max-width: 1200px) {
+	  .row {
+	    @include flex-wrap(wrap)
+	  }
+	}
+}
+
+
+/*
+* List styling
+*/
+ul {
+  list-style-type: disc;
+
+  li {
+    margin: 1ex;
+  }
+}
+
+/*
+* Typography
+* Fonts, sizes, colors of text
+*/
+html {
+  font-family: "HKGroteskRegular", sans-serif;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+.text-secondary {
+  color: $secondary !important;
+}
+
+/*
+* Misc
+* Where organisation goes to die
+*/
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -o-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
+html {
+  color: $primary;
+}
+
+.bg-primary {
+  background-color: $primary !important;
+}
+.bg-secondary {
+  background-color: $secondary !important;
+}
+
+.h-100 {
+  @include flex-grow(1);
+}
