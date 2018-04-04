@@ -1,0 +1,41 @@
+[
+  {
+    "input": "src/static",
+    "output": "build/"
+  },
+  {
+    "input": "src/html/index.html",
+    "output": "build/index.html",
+    "operations": []
+  },
+  {
+    "output": "build/robots.txt",
+    "operations": [
+      "gen_robots_txt"
+    ],
+    "gen_robots_txt": {
+      "sitemap": "http://nathanvarner.com/sitemap.xml",
+      "rules": [
+        {
+          "user-agent": "*",
+          "disallow": [""]
+        }
+      ]
+    }
+  },
+  {
+    "input": "src/style/reset.css",
+    "output": "build/reset.css",
+    "operations": [
+      "min_css"
+    ]
+  },
+  {
+    "input": "src/style/style.scss",
+    "output": "build/style.css",
+    "operations": [
+      "scss_to_css",
+      "min_css"
+    ]
+  }
+]
